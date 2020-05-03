@@ -40,11 +40,11 @@
             <ImageView
                 android:id="@+id/titre"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="60dp"
                 android:gravity="center_vertical"
                 android:textColor="@color/mWhite"
                 tools:ignore="Suspicious0dp"
-                android:src="@drawable/logo"
+                android:src="@drawable/flooz"
                 android:layout_marginLeft="15dp"
                 android:layout_marginStart="15dp" />
 
@@ -71,10 +71,10 @@
             android:layout_alignParentBottom="true"
             android:layout_marginBottom="0dp">
 
-            <TextView
+            <ImageView
                 android:id="@+id/btn_exit"
                 android:layout_width="0dp"
-                android:layout_height="50dp"
+                android:layout_height="70dp"
                 android:layout_gravity="center"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
@@ -83,7 +83,9 @@
                 android:textColor="@color/mWhite"
                 android:text="@string/btn_close_text"
                 tools:ignore="Suspicious0dp"
-                android:textAlignment="center"/>
+                android:textAlignment="center"
+                android:src="@drawable/quitter"
+                android:clickable="true"/>
 
             <TextView
                 android:id="@+id/home_btn"
@@ -100,18 +102,19 @@
                 android:textAlignment="center"
                 android:background="@drawable/btn_rounded"/>
 
-            <TextView
+            <ImageView
                 android:id="@+id/btn_restart_activity"
                 android:layout_width="0dp"
                 android:layout_height="50dp"
                 android:layout_gravity="center"
                 android:layout_marginRight="10dp"
-                android:paddingTop="15dp"
                 android:layout_weight="1"
                 android:textColor="@color/mWhite"
                 android:text="@string/btn_rescan_text"
                 tools:ignore="Suspicious0dp"
-                android:textAlignment="center" />
+                android:textAlignment="center"
+                android:src="@drawable/floozer"
+                android:clickable="true"/>
 
         </LinearLayout>
 
