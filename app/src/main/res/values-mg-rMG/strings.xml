@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">flooz</string>
+    <string name="btn_rescan_text">Hi derive</string>
+    <string name="btn_close_text">Hivoaka</string>
+    <string name="slogan_app">futur.</string>
+    <string name="lang_app_btn">
+        <item>o</item>
+        <item>o</item>
+        <item>o</item>
+    </string>
+    <string name="logo_app">fz</string>
+    <string name="lang_dialog_title">Ny fiteninao</string>
+    <string name="exit_dialog_title">Akatona ve ?</string>
+    <string name="positive_btn_exit_dialog">Eny</string>
+    <string name="negative_btn_exit_dialog">Tsia</string>
+</resources>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#111111</color>
+    <color name="colorPrimaryDark">#000000</color>
+    <color name="colorBgLogo">#CCCCCC</color>
+    <color name="fondBtn">#000000</color>
+    <color name="textBtn">#FAFAFA</color>
+    <color name="mWhite">#FAFAFA</color>
+    <color name="mblack">#111111</color>
+</resources>
