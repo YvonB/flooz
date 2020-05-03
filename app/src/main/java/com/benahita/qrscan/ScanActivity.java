@@ -25,7 +25,7 @@ public class ScanActivity extends AppCompatActivity {
 
     // Val du QRcode
     private TextView qrCodeValue;
-    private TextView changeLang;
+    //private TextView changeLang;
     private TextView btnExit;
     private TextView homeBtn;
     private TextView restartButton;
@@ -55,7 +55,7 @@ public class ScanActivity extends AppCompatActivity {
 
         // ============= La val du QR, la cam (surfaceView) & Les 03 btns ===============
         qrCodeValue = (TextView) findViewById(R.id.code_info); // Valeur du QRCode
-        changeLang = (TextView) findViewById(R.id.langues); // Choix de langues
+        //changeLang = (TextView) findViewById(R.id.langues); // Choix de langues
         mySurfaceView = (SurfaceView) findViewById(R.id.camera_view); // La Surface view, la Cam
         btnExit =  (TextView) findViewById(R.id.btn_exit); // Fermeture
         //btnExit.setTransformationMethod(null); // Texte du Btn en Miniscule
@@ -90,12 +90,12 @@ public class ScanActivity extends AppCompatActivity {
         }
 
         // Changement de langues
-        changeLang.setOnClickListener(new View.OnClickListener() {
+       /* changeLang.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 showChangeLanguageDialog();
             }
-        });
+        });*/
 
         // 3. Fermer l'application
         btnExit.setOnClickListener(new View.OnClickListener() {
@@ -191,7 +191,7 @@ public class ScanActivity extends AppCompatActivity {
     }
 
     // Methode permettant de voir le pop up permettant Changer les langues de lapp
-    private void showChangeLanguageDialog() {
+    /*private void showChangeLanguageDialog() {
         // tableau des langues
         final String[] listItems = {"Malagasy", "Français", "English"};
         AlertDialog.Builder mBuilder = new AlertDialog.Builder(ScanActivity.this);
@@ -220,7 +220,7 @@ public class ScanActivity extends AppCompatActivity {
         // Affiche le pop up contient la liste des langues
         AlertDialog mDialog = mBuilder.create();
         mDialog.show();
-    }
+    }*/
 
     // Methode Quand l'utlisateur fait un retour sur son device = Fermer l'app
     @Override
@@ -264,7 +264,6 @@ public class ScanActivity extends AppCompatActivity {
     void setupQREader() {
         // Init QREader
         // ------------
-
         qrEader = new QREader.Builder(this, mySurfaceView, new QRDataListener() {
             @Override
             public void onDetected(final String data) {

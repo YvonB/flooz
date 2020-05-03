@@ -37,19 +37,19 @@
             android:layout_alignParentTop="true"
             android:layout_marginTop="25px">
 
-            <TextView
+            <ImageView
                 android:id="@+id/titre"
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="match_parent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:gravity="center_vertical"
-                android:padding="10dp"
                 android:textColor="@color/mWhite"
-                android:text="@string/app_name"
-                android:textSize="20sp"
-                tools:ignore="Suspicious0dp"/>
+                tools:ignore="Suspicious0dp"
+                android:src="@drawable/logo"
+                android:layout_marginLeft="15dp"
+                android:layout_marginStart="15dp" />
 
-            <TextView
+
+            <!--TextView
                 android:id="@+id/langues"
                 android:layout_width="0dp"
                 android:layout_weight="0.3"
@@ -59,7 +59,7 @@
                 android:text="@string/lang_app_btn"
                 android:textColor="@color/mWhite"
                 android:textSize="7.5dp"
-                tools:ignore="Suspicious0dp" />
+                tools:ignore="Suspicious0dp" /-->
 
         </LinearLayout>
 
