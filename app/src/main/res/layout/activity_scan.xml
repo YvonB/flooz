@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -37,16 +38,19 @@
             android:layout_alignParentTop="true"
             android:layout_marginTop="25px">
 
-            <ImageView
+            <TextView
                 android:id="@+id/titre"
                 android:layout_width="wrap_content"
-                android:layout_height="60dp"
-                android:gravity="center_vertical"
-                android:textColor="@color/mWhite"
-                tools:ignore="Suspicious0dp"
-                android:src="@drawable/flooz"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
                 android:layout_marginLeft="15dp"
-                android:layout_marginStart="15dp" />
+                android:gravity="center_vertical"
+                android:text="@string/app_name"
+                android:textColor="@color/mWhite"
+                app:fontFamily="@font/sacramento"
+                tools:ignore="Suspicious0dp"
+                android:fontFamily="@font/sacramento"
+                android:textSize="40sp"/>
 
 
             <!--TextView
@@ -71,50 +75,48 @@
             android:layout_alignParentBottom="true"
             android:layout_marginBottom="0dp">
 
-            <ImageView
+            <TextView
                 android:id="@+id/btn_exit"
                 android:layout_width="0dp"
-                android:layout_height="70dp"
+                android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:paddingTop="15dp"
-                android:layout_weight="1"
+                android:layout_weight="2"
                 android:textColor="@color/mWhite"
                 android:text="@string/btn_close_text"
                 tools:ignore="Suspicious0dp"
                 android:textAlignment="center"
-                android:src="@drawable/quitter"
-                android:clickable="true"/>
+                android:clickable="true"
+                android:fontFamily="@font/sacramento"
+                android:textSize="30sp"/>
 
             <TextView
                 android:id="@+id/home_btn"
-                android:layout_width="70dp"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="82dp"
                 android:layout_gravity="center"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="20dp"
                 tools:ignore="Suspicious0dp"
-                android:paddingTop="25dp"
-                android:paddingBottom="25dp"
+                android:padding="5dp"
                 android:text="@string/logo_app"
                 android:textColor="@color/mWhite"
                 android:textAlignment="center"
-                android:background="@drawable/btn_rounded"/>
+                android:background="@drawable/btn_rounded"
+                android:fontFamily="@font/sacramento"
+                android:textSize="40dp"/>
 
-            <ImageView
+            <TextView
                 android:id="@+id/btn_restart_activity"
                 android:layout_width="0dp"
-                android:layout_height="50dp"
+                android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginRight="10dp"
-                android:layout_weight="1"
+                android:layout_weight="2"
                 android:textColor="@color/mWhite"
                 android:text="@string/btn_rescan_text"
                 tools:ignore="Suspicious0dp"
                 android:textAlignment="center"
-                android:src="@drawable/floozer"
-                android:clickable="true"/>
+                android:clickable="true"
+                android:fontFamily="@font/sacramento"
+                android:textSize="30sp"/>
 
         </LinearLayout>
 

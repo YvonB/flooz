@@ -27,9 +27,9 @@ public class ScanActivity extends AppCompatActivity {
     // Val du QRcode
     private TextView qrCodeValue;
     //private TextView changeLang;
-    private ImageView btnExit;
+    private TextView btnExit;
     private TextView homeBtn;
-    private ImageView restartButton;
+    private TextView restartButton;
 
     // Les Btns
 
@@ -58,9 +58,9 @@ public class ScanActivity extends AppCompatActivity {
         qrCodeValue = (TextView) findViewById(R.id.code_info); // Valeur du QRCode
         //changeLang = (TextView) findViewById(R.id.langues); // Choix de langues
         mySurfaceView = (SurfaceView) findViewById(R.id.camera_view); // La Surface view, la Cam
-        btnExit =  (ImageView) findViewById(R.id.btn_exit); // Fermeture
+        btnExit =  (TextView) findViewById(R.id.btn_exit); // Fermeture
         //btnExit.setTransformationMethod(null); // Texte du Btn en Miniscule
-        restartButton = (ImageView) findViewById(R.id.btn_restart_activity); // Re scanner
+        restartButton = (TextView) findViewById(R.id.btn_restart_activity); // Re scanner
         //restartButton.setTransformationMethod(null); // Texte du Btn en Miniscule
         homeBtn = (TextView) findViewById(R.id.home_btn); // home btn
         //homeBtn.setTransformationMethod(null); // home btn, texte minuscule
