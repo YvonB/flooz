@@ -10,7 +10,6 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.SurfaceView;
 import android.view.View;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -114,6 +113,13 @@ public class ScanActivity extends AppCompatActivity {
             }
         });
 
+        // Selfie
+        homeBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(ScanActivity.this, CameraPreview.class));
+            }
+        });
     }
 
     // Methode pour l'affichage plein écran
