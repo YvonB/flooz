@@ -43,8 +43,8 @@ public class MyCanvas extends Activity {
     public static final int PERM_RQST_CODE = 110;
     public StickerView stickerView;
     private TextSticker sticker;
-    protected EditText editText;
-    protected LinearLayout editTextLayout;
+    private EditText editText;
+    private LinearLayout editTextLayout;
     private int textColor;
     public InputMethodManager keyboard;
     public LinearLayout selectSticker;
@@ -65,7 +65,6 @@ public class MyCanvas extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.camera_preview);
-
         editText = (EditText) findViewById(R.id.editText);
         editTextLayout = (LinearLayout) findViewById(R.id.editTextLayout);
         keyboard = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
@@ -80,7 +79,7 @@ public class MyCanvas extends Activity {
         ShapeDrawable shapeDrawable = new ShapeDrawable(new RectShape());
         shapeDrawable.getPaint().setShader(test);
         SeekBar seekBar = (SeekBar) findViewById(R.id.seekbar_font);
-       final View colorSelected = (View) findViewById(R.id.colorSelected);
+        final View colorSelected = (View) findViewById(R.id.colorSelected);
         seekBar.setProgressDrawable((Drawable)shapeDrawable);
 
         seekBar.setMax(256*7-1);
@@ -193,8 +192,8 @@ public class MyCanvas extends Activity {
                     editText.setText(stext);
                     stickerView.removeCurrentSticker();
                     editTextLayout.setVisibility(View.VISIBLE);
-                    showKeyboard(false);
-                    //editText.requestFocus();
+                    showKeyboard(true);
+                    editText.requestFocus();
                 }
                 Log.d(TAG, "onStickerClicked");
             }
@@ -224,10 +223,6 @@ public class MyCanvas extends Activity {
                 Log.d(TAG, "onDoubleTapped: double tap will be with two click");
             }
         });
-
-        editTextLayout.setVisibility(View.VISIBLE);
-        editText.setText("#floozTime");
-        editText.setTextColor(Color.WHITE);
     }
 
     public void showHideEditText() {
@@ -241,8 +236,8 @@ public class MyCanvas extends Activity {
             editText.setText("#floozTime");
             editText.setTextColor(Color.WHITE);
             editTextLayout.setVisibility(View.VISIBLE);
-            //showKeyboard(true);
-            //editText.requestFocus();
+            showKeyboard(true);
+            editText.requestFocus();
 
         }
     }

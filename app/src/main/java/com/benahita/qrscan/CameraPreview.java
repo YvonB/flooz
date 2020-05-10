@@ -99,7 +99,7 @@ public class CameraPreview extends MyCanvas {
         uploadButtonTxt.setText("");
         editTextBody = (LinearLayout) findViewById(R.id.editTextLayout);
         //selectSticker  = (LinearLayout) findViewById(R.id.select_sticker);
-        //ImageView addText = (ImageView) findViewById(R.id.add_text);
+        ImageView addText = (ImageView) findViewById(R.id.add_text);
         ImageView addSticker = (ImageView) findViewById(R.id.add_stickers);
         isRecording = false;
         isFlashOn = false;
@@ -107,7 +107,6 @@ public class CameraPreview extends MyCanvas {
         EditCaptureSwitchBtn = (ImageView) findViewById(R.id.cancel_capture);
         capturedImage = (ImageView) findViewById(R.id.captured_image);
         videoView = (VideoView) findViewById(R.id.captured_video);
-
         preview=(SurfaceView)findViewById(R.id.preview);
         previewHolder=preview.getHolder();
         previewHolder.addCallback(surfaceCallback);
@@ -241,11 +240,11 @@ public class CameraPreview extends MyCanvas {
             public void onClick(View view) {showHideEditText();
             }
         });
-        /*addText.setOnClickListener(new View.OnClickListener() {
+        addText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {showHideEditText();
             }
-        });*/
+        });
         addSticker.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

@@ -84,7 +84,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:visibility="gone"
-                android:background="@color/black"/>
+                android:background="@color/black"
+                />
+
+
             </com.benahita.qrscan.selfie.StickerView>
 
             <com.benahita.qrscan.selfie.StickerView
@@ -131,7 +134,7 @@
                 android:layout_marginBottom="-8dp"
                 android:src="@drawable/ic_smile_shadow_48dp"
                 android:padding="10dp"/>
-            <!--ImageView
+            <ImageView
                 android:id="@+id/add_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -140,7 +143,7 @@
                 android:layout_marginLeft="40dp"
                 android:src="@drawable/ic_text_shadow_48dp"
                 android:padding="3dp"
-                /-->
+                />
             <ImageView
                 android:id="@+id/add_draw"
                 android:layout_width="wrap_content"
@@ -219,8 +222,7 @@
                     android:layout_height="100dp"
                     android:gravity="center_vertical|center_horizontal"
                     android:background="@android:color/transparent"
-                    android:textSize="30sp"
-                    android:focusable="false"/>
+                    android:textSize="30sp"/>
             </LinearLayout>
 
             <LinearLayout
