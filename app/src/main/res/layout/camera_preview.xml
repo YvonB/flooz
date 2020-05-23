@@ -87,7 +87,7 @@
                 android:background="@color/black"
                 />
                 <TextView
-                    android:id="@+id/text"
+                    android:id="@+id/signature_on_img"
                     android:textStyle="bold|italic"
                     android:textSize="24sp"
                     android:padding="4dp"
@@ -95,7 +95,7 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentBottom="true"
                     android:layout_marginBottom="16sp"
-                    android:text="Test"
+                    android:text="@string/app_name"
                     android:textColor="@color/white"/>
 
 
@@ -116,6 +116,17 @@
                 android:layout_height="fill_parent"
                 android:visibility="gone"
                 android:layout_gravity="center"/>
+                <TextView
+                    android:id="@+id/signature_on_video"
+                    android:textStyle="bold|italic"
+                    android:textSize="24sp"
+                    android:padding="4dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginBottom="16sp"
+                    android:text="@string/app_name"
+                    android:textColor="@color/white"/>
             </com.benahita.qrscan.selfie.StickerView>
         </RelativeLayout>
 
@@ -182,7 +193,7 @@
                 android:layout_height="70dp"
                 android:layout_alignParentBottom="true"
                 android:layout_alignParentRight="true"
-                android:src="@drawable/bg_camera_red_gradient"
+                android:src="@drawable/share"
                 android:padding="5dp"
                 android:layout_marginBottom="20dp"
                 android:layout_marginRight="10dp" />

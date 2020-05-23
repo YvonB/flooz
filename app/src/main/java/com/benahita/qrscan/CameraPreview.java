@@ -15,6 +15,7 @@ import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Matrix;
+import android.graphics.drawable.BitmapDrawable;
 import android.hardware.Camera;
 import android.media.MediaPlayer;
 import android.media.MediaRecorder;
@@ -38,6 +39,7 @@ import android.widget.Toast;
 import android.widget.VideoView;
 
 import androidx.core.app.ActivityCompat;
+import androidx.core.content.FileProvider;
 
 import com.benahita.qrscan.selfie.MyCanvas;
 
@@ -135,13 +137,9 @@ public class CameraPreview extends MyCanvas {
         uploadButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                Intent ShareIntent = new Intent(Intent.ACTION_SEND);
-                ShareIntent.setType("text/plain");
-                ShareIntent.putExtra(Intent.EXTRA_SUBJECT, "the title");
-                ShareIntent.putExtra(Intent.EXTRA_TEXT, "my body text");
-                startActivity(Intent.createChooser(ShareIntent, "Partager via"));
-                showToast("Partagé :D ");
+                BitmapDrawable drawable = (BitmapDrawable) capturedImage.getDrawable();
+                Bitmap bitmap = drawable.getBitmap();
+                shareImage(bitmap);
             }
         });
 
@@ -258,6 +256,34 @@ public class CameraPreview extends MyCanvas {
             }
         });
     }
+
+    private void shareImage(Bitmap bitmap) {
+        // save bitmap to cache directory
+        try {
+            File cachePath = new File(this.getCacheDir(), "imageview");
+            cachePath.mkdirs(); // don't forget to make the directory
+            FileOutputStream stream = new FileOutputStream(cachePath + "/image.png"); // overwrites this image every time
+            bitmap.compress(Bitmap.CompressFormat.JPEG, 100, stream);
+            stream.close();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        File imagePath = new File(this.getCacheDir(), "imageview");
+        File newFile = new File(imagePath, "image.png");
+        Uri contentUri = FileProvider.getUriForFile(this, BuildConfig.APPLICATION_ID + ".fileprovider", newFile);
+
+        if (contentUri != null) {
+            Intent shareIntent = new Intent();
+            shareIntent.setAction(Intent.ACTION_SEND);
+            shareIntent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION); // temp permission for receiving app to read this file
+            shareIntent.setDataAndType(contentUri, getContentResolver().getType(contentUri));
+            shareIntent.putExtra(Intent.EXTRA_STREAM, contentUri);
+            shareIntent.setType("image/png");
+            startActivity(Intent.createChooser(shareIntent, "Choose an app"));
+        }
+    }
+
 
     private void showToast(String message) {
         Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
@@ -473,7 +499,7 @@ public class CameraPreview extends MyCanvas {
 
     public void saveMedia(View v) throws IOException {
         if (!videoView.isShown()) {
-            Toast.makeText(this, "Saving...",Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Enregistrement...",Toast.LENGTH_SHORT).show();
             File sdCard = Environment.getExternalStorageDirectory();
             dir = new File(sdCard.getAbsolutePath() + "/Flooz");
             if (!dir.exists()) {
@@ -481,22 +507,22 @@ public class CameraPreview extends MyCanvas {
             }
 
             String timeStamp = new SimpleDateFormat("ddMMyyHHmm").format(new Date());
-            String ImageFile = "opendp-" + timeStamp + ".jpg"; //".png";
+            String ImageFile = "flooz-" + timeStamp + ".jpg"; //".png";
             File file = new File(dir, ImageFile);
 
             try {
                 FileOutputStream fos = new FileOutputStream(file);
                 stickerView.createBitmap().compress(Bitmap.CompressFormat.PNG, 90, fos);
                 refreshGallery(file);
-                Toast.makeText(this, "Saved!",Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "Enregistré!",Toast.LENGTH_LONG).show();
             } catch (FileNotFoundException e) {
-                Toast.makeText(this, "Error saving!",Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "Erreur d'enregistrement!",Toast.LENGTH_LONG).show();
                 Log.d("", "File not found: " + e.getMessage());
             }
         } else {
             if (defaultVideo != null) {
                 String timeStamp = new SimpleDateFormat("ddMMyyHHmm").format(new Date());
-                String VideoFile = "opendp-" + timeStamp + ".mp4";
+                String VideoFile = "flooz-" + timeStamp + ".mp4";
 
                 File from = new File(defaultVideo);
                 File to = new File(dir,VideoFile);
@@ -512,9 +538,9 @@ public class CameraPreview extends MyCanvas {
                 in.close();
                 out.close();
                 refreshGallery(to);
-                Toast.makeText(this, "Saved!",Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "Enregistré!",Toast.LENGTH_LONG).show();
             } else {
-                Toast.makeText(this, "Error saving!",Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "Erreur d'enregistrement!",Toast.LENGTH_LONG).show();
             }
         }
     }
