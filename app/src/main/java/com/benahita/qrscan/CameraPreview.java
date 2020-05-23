@@ -15,7 +15,6 @@ import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Matrix;
-import android.graphics.drawable.BitmapDrawable;
 import android.hardware.Camera;
 import android.media.MediaPlayer;
 import android.media.MediaRecorder;
@@ -137,8 +136,8 @@ public class CameraPreview extends MyCanvas {
         uploadButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                BitmapDrawable drawable = (BitmapDrawable) capturedImage.getDrawable();
-                Bitmap bitmap = drawable.getBitmap();
+                //BitmapDrawable drawable = (BitmapDrawable) capturedImage.getDrawable();
+                Bitmap bitmap = stickerView.createBitmap();
                 shareImage(bitmap);
             }
         });
@@ -514,9 +513,9 @@ public class CameraPreview extends MyCanvas {
                 FileOutputStream fos = new FileOutputStream(file);
                 stickerView.createBitmap().compress(Bitmap.CompressFormat.PNG, 90, fos);
                 refreshGallery(file);
-                Toast.makeText(this, "Enregistré!",Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "Photo enregistré !",Toast.LENGTH_LONG).show();
             } catch (FileNotFoundException e) {
-                Toast.makeText(this, "Erreur d'enregistrement!",Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "Erreur d'enregistrement de la photo !",Toast.LENGTH_LONG).show();
                 Log.d("", "File not found: " + e.getMessage());
             }
         } else {
@@ -526,7 +525,7 @@ public class CameraPreview extends MyCanvas {
 
                 File from = new File(defaultVideo);
                 File to = new File(dir,VideoFile);
-
+                
                 InputStream in = new FileInputStream(from);
                 OutputStream out = new FileOutputStream(to);
 
@@ -538,9 +537,9 @@ public class CameraPreview extends MyCanvas {
                 in.close();
                 out.close();
                 refreshGallery(to);
-                Toast.makeText(this, "Enregistré!",Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "Vidéo enregistré !",Toast.LENGTH_LONG).show();
             } else {
-                Toast.makeText(this, "Erreur d'enregistrement!",Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "Erreur d'enregistrement du vidéo !",Toast.LENGTH_LONG).show();
             }
         }
     }

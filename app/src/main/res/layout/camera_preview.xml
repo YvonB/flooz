@@ -91,12 +91,12 @@
                     android:textStyle="bold|italic"
                     android:textSize="24sp"
                     android:padding="4dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentBottom="true"
-                    android:layout_marginBottom="16sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
                     android:text="@string/app_name"
-                    android:textColor="@color/white"/>
+                    android:textColor="@color/white"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginLeft="10dp"/>
 
 
             </com.benahita.qrscan.selfie.StickerView>
@@ -116,17 +116,19 @@
                 android:layout_height="fill_parent"
                 android:visibility="gone"
                 android:layout_gravity="center"/>
+
                 <TextView
                     android:id="@+id/signature_on_video"
                     android:textStyle="bold|italic"
                     android:textSize="24sp"
                     android:padding="4dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentBottom="true"
-                    android:layout_marginBottom="16sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
                     android:text="@string/app_name"
-                    android:textColor="@color/white"/>
+                    android:textColor="@color/white"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginLeft="10dp"/>
+
             </com.benahita.qrscan.selfie.StickerView>
         </RelativeLayout>
 
