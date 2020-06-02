@@ -8,14 +8,17 @@
     tools:context=".MainActivity"
     android:background="@color/mblack">
 
-    <ImageView
+    <TextView
         android:id="@+id/splashscreen"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@mipmap/ic_launcher_round"
+        android:text="@string/logo_app"
+        android:textColor="@color/mWhite"
         android:gravity="center"
         android:layout_centerInParent="true"
-        android:background="@drawable/border_splash_img"/>
+        android:textStyle="normal"
+        android:textSize="40sp"
+        android:background="@drawable/btn_rounded"
+        android:layout_height="100dp"
+        android:layout_width="100dp"/>
 
     <TextView
         android:layout_width="match_parent"
@@ -24,7 +27,17 @@
         android:textColor="@color/mWhite"
         android:gravity="center"
         android:layout_alignParentBottom="true"
+        android:textStyle="normal"
+        android:layout_marginBottom="40dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/slogan_app_2"
+        android:textColor="@color/mWhite"
+        android:gravity="center"
+        android:layout_alignParentBottom="true"
         android:textStyle="bold"
-        android:layout_marginBottom="75dp"/>
+        android:layout_marginBottom="20dp"/>
 
 </RelativeLayout>

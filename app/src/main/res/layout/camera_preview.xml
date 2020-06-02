@@ -14,15 +14,6 @@
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"/>
 
-    <!--ImageView
-        android:id="@+id/img_od_logo"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_alignParentTop="true"
-        android:layout_centerInParent="true"
-        android:padding="10dp"
-        android:src="@drawable/logo_white_shadow_500" /-->
-
     <ImageView
         android:id="@+id/img_switch_camera"
         android:layout_width="wrap_content"
@@ -31,7 +22,7 @@
         android:layout_alignParentRight="true"
         android:padding="10dp"
         android:src="@drawable/ic_camera_switch_shadow_48dp"
-        android:layout_marginBottom="25dp"
+        android:layout_marginBottom="60dp"
         android:layout_marginRight="40dp"/>
 
     <com.benahita.qrscan.CircleProgressBar
@@ -42,7 +33,7 @@
         app:progressBarThickness="7dp"
         android:layout_alignParentBottom="true"
         android:layout_centerInParent="true"
-        android:layout_marginBottom="10dp"/>
+        android:layout_marginBottom="45dp"/>
 
     <ImageView
         android:id="@+id/img_flash_control"
@@ -52,7 +43,7 @@
         android:layout_alignParentLeft="true"
         android:padding="10dp"
         android:src="@drawable/ic_flash_off_shadow_48dp"
-        android:layout_marginBottom="25dp"
+        android:layout_marginBottom="60dp"
         android:layout_marginLeft="40dp"
         android:clickable="true"
         android:onClick="FlashControl"/>
@@ -88,15 +79,17 @@
                 />
                 <TextView
                     android:id="@+id/signature_on_img"
-                    android:textStyle="bold|italic"
-                    android:textSize="24sp"
+                    android:textSize="40sp"
                     android:padding="4dp"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:text="@string/app_name"
                     android:textColor="@color/white"
                     android:layout_marginTop="30dp"
-                    android:layout_marginLeft="10dp"/>
+                    android:layout_marginLeft="10dp"
+                    app:fontFamily="@font/sacramento"
+                    android:fontFamily="@font/sacramento"
+                   />
 
 
             </com.benahita.qrscan.selfie.StickerView>
@@ -112,22 +105,23 @@
                 android:background="@color/black">
             <VideoView
                 android:id="@+id/captured_video"
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:visibility="gone"
-                android:layout_gravity="center"/>
-
+                android:layout_gravity="center"
+                />
                 <TextView
                     android:id="@+id/signature_on_video"
-                    android:textStyle="bold|italic"
-                    android:textSize="24sp"
+                    android:textSize="40sp"
                     android:padding="4dp"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:text="@string/app_name"
                     android:textColor="@color/white"
                     android:layout_marginTop="30dp"
-                    android:layout_marginLeft="10dp"/>
+                    android:layout_marginLeft="10dp"
+                    android:fontFamily="@font/sacramento"
+                    app:fontFamily="@font/sacramento"/>
 
             </com.benahita.qrscan.selfie.StickerView>
         </RelativeLayout>
@@ -145,9 +139,11 @@
             <ImageView
                 android:id="@+id/cancel_capture"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ic_close_shadow_48dp"
-                android:padding="3dp"/>
+                android:layout_height="wrap_content"                 android:src="@drawable/ic_close_shadow_48dp"
+                android:padding="3dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="25dp"/>
+
             <ImageView
                 android:id="@+id/add_stickers"
                 android:layout_width="wrap_content"
@@ -155,7 +151,7 @@
                 android:layout_alignParentBottom="true"
                 android:layout_alignParentLeft="true"
                 android:layout_marginLeft="75dp"
-                android:layout_marginBottom="-8dp"
+                android:layout_marginBottom="32dp"
                 android:src="@drawable/ic_smile_shadow_48dp"
                 android:padding="10dp"/>
             <ImageView
@@ -167,7 +163,7 @@
                 android:layout_marginLeft="40dp"
                 android:src="@drawable/ic_text_shadow_48dp"
                 android:padding="3dp"
-                />
+                android:layout_marginBottom="38dp"/>
             <ImageView
                 android:id="@+id/add_draw"
                 android:layout_width="wrap_content"
@@ -186,18 +182,18 @@
                 android:layout_alignParentLeft="true"
                 android:src="@drawable/ic_download_shadow_48dp"
                 android:padding="5dp"
-                android:layout_marginBottom="-5dp"
+                android:layout_marginBottom="35dp"
                 android:clickable="true"
                 android:onClick="saveMedia"/>
             <ImageView
                 android:id="@+id/upload_media"
-                android:layout_width="70dp"
-                android:layout_height="70dp"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
                 android:layout_alignParentBottom="true"
                 android:layout_alignParentRight="true"
-                android:src="@drawable/share"
+                android:src="@drawable/icons8share96"
                 android:padding="5dp"
-                android:layout_marginBottom="20dp"
+                android:layout_marginBottom="43dp"
                 android:layout_marginRight="10dp" />
             <TextView
                 android:id="@+id/upload_media_txt"

@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">flooz</string>
-    <string name="btn_rescan_text">Re scan</string>
-    <string name="btn_close_text">Give up</string>
-    <string name="slogan_app">futur.</string>
+    <string name="btn_rescan_text">Floozer</string>
+    <string name="btn_close_text"> Quitter</string>
+    <string name="slogan_app">origin</string>
+    <string name="slogan_app_2">Algofy</string>
     <string name="lang_app_btn">
         <item>o</item>
         <item>o</item>
         <item>o</item>
     </string>
-    <string name="logo_app">fz</string>
-    <string name="lang_dialog_title">Your language</string>
-    <string name="exit_dialog_title">Close ?</string>
-    <string name="positive_btn_exit_dialog">Yes</string>
-    <string name="negative_btn_exit_dialog">No</string>
+    <string name="logo_app">Fz</string>
+    <string name="lang_dialog_title">Votre langue</string>
+    <string name="exit_dialog_title">Quiter ?</string>
+    <string name="positive_btn_exit_dialog">Oui</string>
+    <string name="negative_btn_exit_dialog">Non</string>
 </resources>

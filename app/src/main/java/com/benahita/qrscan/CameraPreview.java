@@ -39,6 +39,7 @@ import android.widget.VideoView;
 
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.FileProvider;
+import androidx.core.content.res.ResourcesCompat;
 
 import com.benahita.qrscan.selfie.MyCanvas;
 
@@ -102,6 +103,10 @@ public class CameraPreview extends MyCanvas {
         //selectSticker  = (LinearLayout) findViewById(R.id.select_sticker);
         ImageView addText = (ImageView) findViewById(R.id.add_text);
         ImageView addSticker = (ImageView) findViewById(R.id.add_stickers);
+        TextView signature_img = (TextView) findViewById(R.id.signature_on_img);
+        signature_img.setTypeface(ResourcesCompat.getFont(this, R.font.sacramento));
+        TextView signature_vid = (TextView) findViewById(R.id.signature_on_video);
+        signature_vid.setTypeface(ResourcesCompat.getFont(this, R.font.sacramento));
         isRecording = false;
         isFlashOn = false;
 
@@ -525,7 +530,7 @@ public class CameraPreview extends MyCanvas {
 
                 File from = new File(defaultVideo);
                 File to = new File(dir,VideoFile);
-                
+
                 InputStream in = new FileInputStream(from);
                 OutputStream out = new FileOutputStream(to);
 

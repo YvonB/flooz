@@ -52,28 +52,15 @@
                 android:fontFamily="@font/sacramento"
                 android:textSize="40sp"/>
 
-
-            <!--TextView
-                android:id="@+id/langues"
-                android:layout_width="0dp"
-                android:layout_weight="0.3"
-                android:layout_height="match_parent"
-                android:gravity="right|center"
-                android:padding="10dp"
-                android:text="@string/lang_app_btn"
-                android:textColor="@color/mWhite"
-                android:textSize="7.5dp"
-                tools:ignore="Suspicious0dp" /-->
-
         </LinearLayout>
 
         <LinearLayout
             android:id="@+id/btn_container"
             android:layout_width="match_parent"
-            android:layout_height="140dp"
+            android:layout_height="150dp"
             android:orientation="horizontal"
             android:layout_alignParentBottom="true"
-            android:layout_marginBottom="0dp">
+            android:layout_marginBottom="20dp">
 
             <TextView
                 android:id="@+id/btn_exit"
@@ -86,22 +73,19 @@
                 tools:ignore="Suspicious0dp"
                 android:textAlignment="center"
                 android:clickable="true"
-                android:fontFamily="@font/sacramento"
-                android:textSize="30sp"/>
+                android:textSize="15sp"/>
 
             <TextView
                 android:id="@+id/home_btn"
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="82dp"
+                android:layout_width="100dp"
+                android:layout_weight="0"
+                android:layout_height="100dp"
                 android:layout_gravity="center"
                 tools:ignore="Suspicious0dp"
-                android:padding="5dp"
                 android:text="@string/logo_app"
                 android:textColor="@color/mWhite"
-                android:textAlignment="center"
+                android:gravity="center"
                 android:background="@drawable/btn_rounded"
-                android:fontFamily="@font/sacramento"
                 android:textSize="40dp"/>
 
             <TextView
@@ -115,8 +99,7 @@
                 tools:ignore="Suspicious0dp"
                 android:textAlignment="center"
                 android:clickable="true"
-                android:fontFamily="@font/sacramento"
-                android:textSize="30sp"/>
+                android:textSize="15sp"/>
 
         </LinearLayout>
 
